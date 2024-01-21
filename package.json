@@ -1,0 +1,40 @@
+{
+	"name": "@hornwitser/remote_scripts",
+	"version": "0.1.0",
+	"description": "Clusterio plugin for running scripts remotely",
+	"author": "Hornwitser <github@hornwitser.no>",
+	"homepage": "https://github.com/Hornwitser/remote_scripts#readme",
+	"license": "MIT",
+	"repository": "Hornwitser/remote_scripts",
+	"main": "dist/plugin/index.js",
+	"scripts": {
+		"prepare": "tsc --build && webpack-cli --env production"
+	},
+	"bugs": {
+		"url": "https://github.com/Hornwitser/remote_scripts/issues"
+	},
+	"engines": {
+		"node": ">=18"
+	},
+	"peerDependencies": {
+		"@clusterio/lib": "^2.0.0-alpha.0"
+	},
+	"devDependencies": {
+		"@clusterio/lib": "^2.0.0-alpha.14",
+		"@clusterio/web_ui": "^2.0.0-alpha.14",
+		"@types/fs-extra": "^11.0.1",
+		"@types/node": "^20.4.5",
+		"@types/react": "^18.2.21",
+		"typescript": "^5.1.6",
+		"webpack": "^5.88.2",
+		"webpack-cli": "^5.1.4",
+		"webpack-merge": "^5.9.0"
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"dependencies": {
+		"@sinclair/typebox": "^0.30.4",
+		"fs-extra": "^11.2.0"
+	}
+}
