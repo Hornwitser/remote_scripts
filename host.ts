@@ -29,6 +29,9 @@ export class HostPlugin extends BaseHostPlugin {
 					shell: false,
 				},
 				(err, stdout, stderr) => {
+					if (err instanceof Error) {
+						reject(err);
+					}
 					const code = typeof err?.code === "number" ? err.code : undefined;
 					resolve({ stdout, stderr, code });
 				}
