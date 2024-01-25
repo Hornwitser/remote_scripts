@@ -58,6 +58,10 @@ export class HostPlugin extends BaseHostPlugin {
 		try {
 			return await this.execFile(script, request.args);
 		} catch (err: any) {
+			// Workaround due to err.code number not being allowed.
+			if (typeof err.code === "number") {
+				throw new RequestError(`Script ${script} retuned status code ${err.code}`);
+			}
 			if (err.code === "EACCES") {
 				throw new RequestError(`Permission denied executing ${script}`);
 			}
